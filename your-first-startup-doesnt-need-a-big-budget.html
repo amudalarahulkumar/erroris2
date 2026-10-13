@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f7f8fb" />
+  <meta name="description" content="Explore the real side of entrepreneurship: learning through experiments, feedback, setbacks, teamwork, and the E-Cell journey." />
+  <meta property="og:title" content="Your First Startup Doesn’t Need a Big Budget — E-Cell Journal" />
+  <meta property="og:description" content="Practical ways to test a student startup idea with the resources you already have." />
+  <meta property="og:type" content="article" />
+  <title>Your First Startup Doesn’t Need a Big Budget | E-Cell Journal</title>
+  <style>
+    :root {
+      --bg: #f7f8fb;
+      --paper: #ffffff;
+      --ink: #172033;
+      --muted: #647087;
+      --line: #e4e8f0;
+      --blue: #2859d6;
+      --blue-dark: #173b9c;
+      --blue-soft: #eaf0ff;
+      --max: 1120px;
+      --article: 740px;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(25, 42, 80, .07);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
+
+    .topbar {
+      border-bottom: 1px solid rgba(228, 232, 240, .9);
+      background: rgba(247, 248, 251, .88);
+    }
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      font-size: .94rem;
+      font-weight: 800;
+      letter-spacing: -.035em;
+    }
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      background: var(--blue);
+      border-radius: 12px;
+      font-size: .88rem;
+      letter-spacing: -.06em;
+    }
+    .nav-label {
+      color: var(--muted);
+      font-size: .84rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .nav-label:hover { color: var(--blue); }
+
+    .hero {
+      padding: 74px 0 44px;
+    }
+    .hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 7px 12px;
+      border: 1px solid #dce5ff;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .09em;
+      text-transform: uppercase;
+    }
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+    h1 {
+      max-width: 850px;
+      margin: 25px auto 18px;
+      font-size: clamp(2.55rem, 6.3vw, 5.1rem);
+      line-height: 1.04;
+      letter-spacing: -.075em;
+      font-weight: 850;
+    }
+    .subtitle {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      line-height: 1.7;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 10px 16px;
+      margin-top: 27px;
+      color: var(--muted);
+      font-size: .83rem;
+      font-weight: 600;
+    }
+    .meta span + span::before {
+      content: "·";
+      margin-right: 16px;
+      color: #a4adbd;
+    }
+
+    .cover {
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      max-height: 410px;
+      aspect-ratio: 2.25 / 1;
+      margin: 12px auto 0;
+      border: 1px solid #dfe6f7;
+      border-radius: var(--radius);
+      background:
+        radial-gradient(circle at 78% 23%, rgba(255,255,255,.95) 0 5%, transparent 5.4%),
+        radial-gradient(circle at 78% 23%, rgba(255,255,255,.22) 0 13%, transparent 13.5%),
+        linear-gradient(130deg, #142e70 0%, #2859d6 52%, #8ca8f5 100%);
+      box-shadow: var(--shadow);
+    }
+    .cover::before {
+      content: "";
+      position: absolute;
+      width: 520px;
+      height: 520px;
+      right: -80px;
+      top: -240px;
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 50%;
+      box-shadow: 0 0 0 35px rgba(255,255,255,.055), 0 0 0 75px rgba(255,255,255,.045), 0 0 0 120px rgba(255,255,255,.035);
+    }
+    .cover::after {
+      content: "";
+      position: absolute;
+      width: 56%;
+      height: 2px;
+      right: 8%;
+      bottom: 23%;
+      transform: rotate(-26deg);
+      transform-origin: right center;
+      background: rgba(255,255,255,.55);
+    }
+    .cover-art {
+      position: absolute;
+      right: 16%;
+      top: 17%;
+      width: 170px;
+      height: 170px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(255,255,255,.52);
+      border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      backdrop-filter: blur(5px);
+    }
+    .cover-art svg { width: 94px; height: 94px; }
+    .cover-caption {
+      position: absolute;
+      z-index: 1;
+      left: clamp(24px, 5.5vw, 62px);
+      bottom: clamp(25px, 5vw, 54px);
+      color: #fff;
+    }
+    .cover-caption small {
+      display: block;
+      margin-bottom: 8px;
+      font-size: .74rem;
+      font-weight: 800;
+      letter-spacing: .17em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.72);
+    }
+    .cover-caption strong {
+      display: block;
+      max-width: 460px;
+      font-size: clamp(1.55rem, 3.6vw, 2.8rem);
+      line-height: 1.1;
+      letter-spacing: -.055em;
+    }
+
+    .article-shell {
+      display: grid;
+      grid-template-columns: minmax(0, var(--article)) 220px;
+      gap: 46px;
+      align-items: start;
+      justify-content: center;
+      padding: 58px 0 88px;
+    }
+    article {
+      min-width: 0;
+      padding: clamp(25px, 5vw, 58px);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: 0 10px 35px rgba(25, 42, 80, .035);
+    }
+    .intro {
+      margin: 0 0 30px;
+      padding: 0 0 28px;
+      border-bottom: 1px solid var(--line);
+      color: #34415a;
+      font-size: 1.13rem;
+      line-height: 1.85;
+    }
+    .intro strong { color: var(--ink); }
+    h2 {
+      margin: 38px 0 13px;
+      font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+      line-height: 1.25;
+      letter-spacing: -.045em;
+    }
+    article p {
+      margin: 0 0 17px;
+      color: #465168;
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+    .pullquote {
+      margin: 34px 0;
+      padding: 23px 25px;
+      border-left: 4px solid var(--blue);
+      border-radius: 0 14px 14px 0;
+      background: #f2f5ff;
+      color: #203c84;
+      font-size: 1.12rem;
+      font-weight: 750;
+      line-height: 1.65;
+      letter-spacing: -.02em;
+    }
+    .end-note {
+      margin-top: 36px;
+      padding-top: 25px;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 1.08rem;
+      font-weight: 750;
+      line-height: 1.8;
+    }
+
+    aside {
+      position: sticky;
+      top: 28px;
+      padding-top: 8px;
+    }
+    .side-card {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.75);
+    }
+    .side-title {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 850;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .toc { margin: 0; padding: 0; list-style: none; }
+    .toc li { margin: 0; }
+    .toc a {
+      display: block;
+      padding: 8px 0;
+      color: #4d5870;
+      font-size: .86rem;
+      line-height: 1.4;
+      text-decoration: none;
+    }
+    .toc a:hover { color: var(--blue); }
+    .side-divider { height: 1px; margin: 18px 0; background: var(--line); }
+    .side-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: .86rem;
+      line-height: 1.7;
+    }
+
+    .bottom-cta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 22px;
+      padding: 27px 30px;
+      border-radius: 18px;
+      background: #172b5d;
+      color: #fff;
+    }
+    .bottom-cta h2 {
+      margin: 0 0 5px;
+      font-size: 1.25rem;
+    }
+    .bottom-cta p {
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: .9rem;
+    }
+    .back-top {
+      flex: 0 0 auto;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 15px;
+      border: 1px solid rgba(255,255,255,.3);
+      border-radius: 999px;
+      color: #fff;
+      font-size: .85rem;
+      font-weight: 750;
+      text-decoration: none;
+    }
+    .back-top:hover { background: rgba(255,255,255,.1); }
+
+    footer {
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .82rem;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+    .footer-brand { color: var(--ink); font-weight: 800; }
+    .reading-progress {
+      position: fixed;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--blue);
+    }
+
+    @media (max-width: 900px) {
+      .article-shell { grid-template-columns: minmax(0, var(--article)); }
+      aside { position: static; order: -1; }
+      .side-card { padding: 17px 20px; }
+      .toc { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 20px; }
+      .side-divider, .side-note { display: none; }
+    }
+    @media (max-width: 600px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      .nav { min-height: 66px; }
+      .nav-label { font-size: .78rem; }
+      .hero { padding: 48px 0 28px; }
+      h1 { margin-top: 20px; }
+      .meta { gap: 7px 10px; font-size: .76rem; }
+      .meta span + span::before { margin-right: 10px; }
+      .cover { min-height: 270px; aspect-ratio: 1.15 / 1; }
+      .cover-art { width: 120px; height: 120px; right: 9%; top: 13%; }
+      .cover-art svg { width: 70px; height: 70px; }
+      .cover-caption { left: 22px; bottom: 24px; }
+      .cover-caption strong { max-width: 250px; }
+      .article-shell { padding: 34px 0 58px; gap: 20px; }
+      article { padding: 25px 21px; border-radius: 18px; }
+      .intro { font-size: 1.04rem; }
+      article p { font-size: .97rem; }
+      .toc { grid-template-columns: 1fr; }
+      .toc a { padding: 6px 0; }
+      .bottom-cta { align-items: flex-start; flex-direction: column; padding: 23px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      * { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  .example-grid{display:grid;gap:14px;margin:24px 0}.example{padding:20px;border:1px solid var(--line);border-radius:14px;background:#f7f9ff}.example h3{margin:0 0 8px;font-size:1.05rem;line-height:1.4}.example p{margin:0}h2{scroll-margin-top:24px}@media(max-width:400px){.nav{gap:10px}.brand{font-size:.88rem;gap:8px}.brand-mark{width:30px;height:30px}.nav-label{font-size:.68rem}} </style>
+</head>
+<body id="top">
+  <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#top" aria-label="Team Erroris — E-Cell Journal">
+        <span class="brand-mark">E</span>
+        <span>Team Erroris</span>
+      </a>
+      <a class="nav-label" href="#article" style="color:var(--blue-dark);font-weight:800">NEC ID: NEC2683357</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero wrap" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> Blog 02 · Entrepreneurship</span>
+        <h1 id="page-title">Your First Startup Doesn’t Need a Big Budget</h1>
+        <p class="subtitle">Practical ways to test a student startup idea with the resources you already have.</p>
+        <div class="meta" aria-label="Article details">
+          <span>E-Cell Blog Series</span>
+          <span>Student Innovation</span>
+          <span>Learning &amp; Growth</span>
+        </div>
+      </div>
+
+      <div class="cover" role="img" aria-label="Abstract blue lightbulb illustration representing a small startup idea">
+        <div class="cover-art" aria-hidden="true">
+          <svg viewBox="0 0 100 100" fill="none">
+            <path d="M50 13v10M50 77v10M13 50h10M77 50h10M24 24l7 7M69 69l7 7M76 24l-7 7M31 69l-7 7" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".75"/>
+            <path d="M35 43a15 15 0 1 1 30 0c0 6-3 9-7 13-2 2-3 4-3 7H45c0-3-1-5-3-7-4-4-7-7-7-13Z" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+            <path d="M45 70h10M46 76h8" stroke="white" stroke-width="3" stroke-linecap="round"/>
+            <path d="m43 43 5 5 10-11" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="cover-caption">
+          <small>Start Small · Learn · Improve</small>
+          <strong>Less spending. More learning.</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap article-shell">
+      <article id="article"><p class="intro">A limited budget does not have to stop you from exploring a business idea. For many student ventures, the first useful step is a conversation, a small trial, or a simple service—not a large investment. <strong>Spend enough to learn whether your idea solves a real problem before spending to make it bigger.</strong></p>
+<p>When we picture a startup, we often imagine an office, a polished app, a large team, and expensive marketing. Those things may become relevant as a venture grows. At the beginning, your most important task is more basic: understand who needs your solution and find out whether you can deliver something they value.</p>
+<h2 id="need">1. Begin With a Need You Can Understand</h2>
+<p>Choose a problem you can investigate without expensive research. Your campus, neighbourhood, or existing creative work may offer a useful starting point. Perhaps a student club needs better event posters, a local shop needs a clearer catalogue, or students struggle to find used textbooks.</p>
+<p>Speak to the people involved. Ask how they currently handle the problem, what frustrates them, and what they have already tried. A small budget becomes easier to manage when you avoid building a solution around an untested assumption.</p>
+<div class="pullquote">Your first investment should help you answer a question, not simply make the idea look bigger.</div>
+<h2 id="resources">2. Make an Inventory Before Making a Purchase</h2>
+<p>List what you already have: skills, a laptop or phone, access to suitable software, people who can offer feedback, and places where you can reach potential users. A teammate who enjoys design, writing, or coding can help you test an idea—but agree on responsibilities and ownership clearly.</p>
+<p>Check the terms of any tool you use. A free plan may have limits on storage, features, or commercial use. College equipment and facilities may also require permission. “Available” does not always mean “free to use for a business.”</p>
+<p>Use your existing resources where they fit the task. Buy something only when you can explain what it enables and why a simpler option is insufficient.</p>
+<h2 id="version">3. Build the Smallest Version That Delivers Value</h2>
+<p>A first version does not need every feature you imagine. It needs to help a real user complete one meaningful task.</p>
+<div class="example-grid">
+<div class="example"><h3>A design service</h3><p>Offer one clearly defined deliverable, such as an event poster, using a small portfolio. Agree on the scope, revision limit, and payment terms before accepting work.</p></div>
+<div class="example"><h3>A used-book directory</h3><p>Start with a consent-based list of available books and a simple enquiry form. Learn whether buyers and sellers complete exchanges before investing in a marketplace.</p></div>
+<div class="example"><h3>A local catalogue service</h3><p>Help one willing shop organise product information into a basic digital catalogue. Test whether customers can find the information they need and whether the shop values the service.</p></div>
+</div>
+<p>These are hypothetical examples, not guaranteed business opportunities. Each requires permission where relevant and evidence that the proposed service is useful.</p>
+<h2 id="budget">4. Give Every Expense a Purpose</h2>
+<p>Separate essential trial costs from optional presentation costs. Materials, a necessary licence, or transport to deliver a service may support the test directly. Merchandise, an elaborate launch, or paid promotion may be unnecessary before you understand demand.</p>
+<p>Keep a simple record of expenses, payments received, and outstanding commitments. Include costs that are easy to overlook, such as transaction charges, delivery, replacements, and revisions. Your own effort matters too: a service that earns money but consumes an unsustainable amount of work needs adjustment.</p>
+<p>Set a spending limit you can afford without relying on the idea succeeding. Define what evidence would justify the next expense. A custom website, for example, should solve a clear limitation rather than serve as a symbol that the venture is serious.</p>
+<h2 id="customers">5. Find Your First Customers Through Relevant Conversations</h2>
+<p>Start with people who actually face the problem. A clear explanation and a useful sample can be more informative than broad advertising. Ask permission to share your offer in relevant student groups, speak to potential customers directly, or request an introduction from someone who understands their needs.</p>
+<p>Explain what you provide, what it costs, and what the customer should expect. Avoid promising results you cannot control. If you offer a free trial, define its scope and decide what you want to learn from it.</p>
+<p>Friends may support an idea because they support you. Look for stronger evidence: someone choosing your service, completing a purchase, returning, or recommending it because it helped them.</p>
+<h2 id="learn">6. Use the Results to Decide What Comes Next</h2>
+<p>After a small trial, ask three questions: Did people use it? Did it solve the problem? Can you deliver it reliably at a workable cost?</p>
+<p>If interest is low, investigate the reason. You may be speaking to the wrong users, offering the wrong solution, or solving a problem that is not important enough. If users value the result but delivery is difficult, simplify the process or adjust the scope.</p>
+<p>Stopping a weak idea can be a useful outcome. The purpose of an inexpensive test is to learn before making larger commitments. Spending more does not automatically fix unclear demand.</p>
+<h2 id="ecell">Starting Small Through E-Cell</h2>
+<p>An E-Cell can provide a setting to discuss ideas, practise pitches, and seek feedback from peers and mentors. Team Erroris encourages students to approach entrepreneurship through practical questions: What do people need? What can we test with available resources? What would count as useful evidence?</p>
+<p>Some ventures, especially those involving hardware, specialised facilities, or regulated activities, require significant resources even for an early test. In those cases, research feasibility and requirements before committing money, and seek appropriate support.</p>
+<p class="end-note">A small budget works best when paired with a clear problem, a manageable experiment, and honest learning. Start with what you can deliver well, then let the evidence guide your next step.</p>
+<div class="bottom-cta"><div><h2>Make the first step manageable.</h2><p>One useful offer. One small test. One clear lesson.</p></div><a class="back-top" href="#top">Back to top ↑</a></div></article>
+
+      <aside aria-label="Article navigation">
+        <div class="side-card">
+          <p class="side-title">In this article</p>
+          <ul class="toc"><li><a href="#need">Begin With a Real Need</a></li><li><a href="#resources">Use Existing Resources</a></li><li><a href="#version">Build a Simple Version</a></li><li><a href="#budget">Plan Your Spending</a></li><li><a href="#customers">Find Your First Customers</a></li><li><a href="#learn">Learn From the Results</a></li><li><a href="#ecell">Starting Small Through E-Cell</a></li></ul>
+          <div class="side-divider"></div>
+          <p class="side-title">The takeaway</p>
+          <p class="side-note">Keep the first test affordable. Spend with a purpose. Grow when the evidence supports it.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap footer-inner">
+      <span class="footer-brand">Team Erroris · NEC2683357</span>
+      <span>Entrepreneurship Blog Series · Blog 02</span>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      const progress = document.getElementById("readingProgress");
+      function updateProgress() {
+        const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+        const percent = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+        progress.style.width = Math.min(100, Math.max(0, percent)) + "%";
+      }
+      window.addEventListener("scroll", updateProgress, { passive: true });
+      window.addEventListener("resize", updateProgress);
+      updateProgress();
+    })();
+  </script>
+</body>
+</html>
